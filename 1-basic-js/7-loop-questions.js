@@ -1,6 +1,6 @@
 console.log("Loop Practicals");
 
-const points = [34, 15, 2, 52, 19, 56, 30, 57];
+
 // const points2 = [1,2,3]
 const product = [
     {
@@ -324,23 +324,44 @@ const product = [
 //     }
 //     return sliceArray
 // }
-// console.log(sliceArrayFn(0,3,[1,2,3,4,5]));
+// console.log(sliceArrayFn(3,2,[1,2,3,4,5]));
+//  3 + 4 = 7
+// start length
+
+const points = [34, 15, 2, 52, 19, 56, 30, 57];
+// startIndex 2 + length 3 = endIndex 5
+// const sliceArray = function (arr,startIndex,length) {
+//     const result = []
+//     let resultIndex = 0
+
+//     // endIndex =  5
+//     let endIndex = start + length
+//     for(x in arr){
+//         console.log(x);
+//         // 5 >= 2 && 5 < 5
+//         if(x >= startIndex && x < endIndex){
+//             result[resultIndex++] = arr[x]
+//         }
+//     }
+//     return result
+// }
+// console.log(sliceArray(points,2,3));
 
 
 
 // 6. CopyArray, Modified Array, Filter Array
-const copyArray = function (arr) {
-    const result = []
-    let resultIndex = 0
-    for(x of arr){
-        result[resultIndex++] = x
-    }
-    return result
-}
-const copier = copyArray(points)
-points[0] = 'aa'
-console.log(points);
-console.log(copier);
+// const copyArray = function (arr) {
+//     const result = []
+//     let resultIndex = 0
+//     for(x of arr){
+//         result[resultIndex++] = x
+//     }
+//     return result
+// }
+// const copier = copyArray(points)
+// points[0] = 'aa'
+// console.log(points);
+// console.log(copier);
 
 
 
@@ -353,20 +374,68 @@ console.log(copier);
 // * * * \n
 // * * * \n
 // * * * \n
-let star = ""
-for(let i = 1; i<=4; i++){
-    star += "* * *\n"
-}
-console.log(star);
+    // let star = ""
+    // for(let i = 1; i<=3; i++){
+    //     star += "* * * *\n"
+    // }
+    // console.log(star);
 
 
 
 // n x n square လေးဖန်တီးရအောင်
+// **
+// **
+// ** 
+// const rectangle = function(w,h,chr="*"){
+//     let result = ""
+//     // 3 <= 3
+//     for(let x = 1; x <= h; x++){
+//         for(let i = 1; i <= w; i++){
+//             result += chr
+//         }
+//         result += "\n"
+//     }
+//     return result
+// }
+// console.log(rectangle(2,3));
+// console.log(rectangle(4,2,"S"));
+
+
 // 3row triangle လေးဖန်တီးရအောင်
 // * 
 // * * 
 // * * *
+const triangle = function (h) {
+    let result = ""
+    // 4 <= 3 
+    for(let x = 1; x <= h; x++){
+        // 1 <= 3
+        for(let i = 1; i <= x; i++){
+            result += "*"
+        }
+        result += "\n"
+    }
+    return result
+}
+// console.log(triangle(3));
 
+
+// ***
+// **
+// *
+const reverseTriangle = function (h) {
+    let result = ""
+    // 4 <= 3 
+    for(let x = h; x >= 1; x--){
+        // 1 <= 3
+        for(let i = 1; i <= x; i++){
+            result += "*"
+        }
+        result += "\n"
+    }
+    return result
+}
+// console.log(reverseTriangle(3));
 
 
 const marks = {
@@ -382,7 +451,8 @@ const student1Mark = [
     {
         subject: "Myanmar",
         short: "mm",
-        mark: 45
+        mark: 40,
+        // result : "fail"
     },
     {
         subject: "English",
@@ -414,11 +484,14 @@ const student1Mark = [
 const allStudentsMark = [
     {
         name: "Mg Mg",
+        // overAll = "pass"
+        // distinction = 3
         marks: [
             {
                 subject: "Myanmar",
                 short: "mm",
-                mark: 45
+                mark: 45,
+                // result = "pass"
             },
             {
                 subject: "English",
@@ -522,8 +595,69 @@ const allStudentsMark = [
 
 // Problems
 // 1. marks, studentMark စုစုပေါင်း ရေးပြပါ
+// let total = 0
+// for(mark in marks){
+//     // console.log(marks[mark]);
+//     total += marks[mark]
+// }
+// console.log(total);
+
+
+
+// let total2 = 0
+// for(x of student1Mark){
+//     // console.log(x.mark);
+//     total2 += x.mark
+// }
+// console.log(total2);
+
 // 2. studentMark မှဘာသာရပ်တစ်ခုစီ ကျရှံးတွက်ပေးပါကြရှုံး
 // 3. over all အောင်မြင်၊ ကျရှုံးတွက်ပေးပါ
+
+// 1 pass or fail 
+// 2 result ta khu htet htae ml
+// 3 over all 
+
+// const passOrFail = function(mark){
+//     return mark >= 40 ? "pass" : "fail"
+// }
+
+// let overall = "pass"
+// for(subject of student1Mark){
+//     // console.log(subject);
+//     // console.log(subject.mark);
+//     let resultBySubject = passOrFail(subject.mark)
+//     subject.result = resultBySubject
+//     if(resultBySubject == "fail"){
+//         overall = "fail"
+//     }
+// }
+// console.log(student1Mark);
+// console.log(overall);
+
+const passOrFail = function(mark){
+    return mark >= 40 ? "pass" : "fail"
+}
+
+for(student of allStudentsMark){
+    // console.log(student.marks);
+    student.overAll = "pass"
+    student.distinction = 0
+    for(subject of student.marks){
+        // console.log(subject);
+    let resultBySubject = passOrFail(subject.mark)
+    subject.result = resultBySubject
+
+    if(resultBySubject == "fail"){
+        student.overAll = "fail"
+    }
+    
+    if(subject.mark >= 80){
+        student.distinction += 1
+    }
+    }
+}
+console.log(allStudentsMark);
 // 4. ကျောင်းသားအားလုံး အောင်မြင်၊ ကျရှုံးတွက် ပေးပါ
 // 5. အောင်မြင်တဲ့လူတွေဆို Distinction ပါရင် ထည့်ရည်တွက်ပေးပါ
 
