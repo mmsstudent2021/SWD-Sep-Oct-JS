@@ -20,15 +20,15 @@
 // x= 50
 // console.log(x);
 
-// conditional statement 
+// conditional statement
 // if(false){
 //    console.log("this is true");
 // }else{
 //     console.log("this is false");
 // }
 
-// conditional expression 
-// ternary operator 
+// conditional expression
+// ternary operator
 // console.log(false ? "this is true" : "this is false");
 
 // const run = function () {
@@ -44,7 +44,7 @@
 // console.log(true && false);
 // console.log(false && false);
 
-// // OR || operator 
+// // OR || operator
 // console.log(true || true);
 // console.log(false || true);
 // console.log(true || false);
@@ -55,11 +55,10 @@
 // console.log(true || false || false);
 // console.log(false || false || false);
 
-// // NOT ! operator 
+// // NOT ! operator
 // console.log(!!!true);
 
-
-// pratical lesson 
+// pratical lesson
 
 // const wakeUp = function (hour) {
 //     if(hour <= 8){
@@ -155,3 +154,22 @@
 //     return "bite ma wa buu"
 // }
 // console.log(eat("hotpot"));
+
+// switch
+const fruit = "aa";
+switch (fruit) {
+  case "apple":
+    console.log("apple is red or green color");
+    break;
+
+  case "orange":
+    console.log("orange is orange color");
+    break;
+
+  case "banana":
+    console.log("banana is yellow");
+    break;
+
+  default:
+    console.log("i don't know that fruit");
+}

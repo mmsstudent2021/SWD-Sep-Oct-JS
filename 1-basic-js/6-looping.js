@@ -115,10 +115,30 @@ const people = [
     { id: 5, name: "Chris Wilson", age: 28, gender: "Non-binary", township: "Riverside" }
   ];
 
-for(obj of people){
-    // console.log(obj);
-    for(i in obj){
-        console.log(obj[i]);
-    }
-    console.log("===================");
-}
+// for(obj of people){
+//     // console.log(obj);
+//     for(i in obj){
+//         console.log(obj[i]);
+//     }
+//     console.log("===================");
+// }
+
+// // while 
+// let count = 1
+// while (count <= 5){
+//   console.log(count);
+//   count++
+// }
+
+// // do while 
+// let count2 = 1
+// do{
+//   console.log(count2);
+//   count2++
+// }while(count2 <= 5)
+
+// console.log(typeof "");
+// console.log(typeof 99);
+// console.log(typeof {});
+
+console.log(undefined ? "true" : "false");
