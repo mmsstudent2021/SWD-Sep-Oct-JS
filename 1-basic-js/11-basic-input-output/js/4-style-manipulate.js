@@ -68,5 +68,5 @@ a.setAttribute("target","_blank")
 console.log(a.getAttribute("target"));
 
 const img = document.querySelector("img")
-console.log(img.src);
+console.log(img.src); 
 console.log(img.getAttribute("src"));
